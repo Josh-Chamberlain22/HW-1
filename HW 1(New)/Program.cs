@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Name: Joshua Chamberlain
+//Date: 01/24/2022
+/*Description: This uses inheritence to allow the user to create different types of animals. Then a menu driven
+adding process and printing process allows the user to do certain things. */
+using System;
 using System.Collections.Generic;
 
 namespace HW_1
@@ -108,7 +112,7 @@ namespace HW_1
         private string Noise;
         private double Weight;
 
-
+        //Constructor for an Animal
         public Animal()
         {
             Name = "Steve";
@@ -116,7 +120,11 @@ namespace HW_1
             Noise = "Caw Caw";
             Weight = 5.12;
         }
-
+        //Parameterized Constructor for animal.
+        //Name is the name of the animal.
+        //Age is the age of the animal in years.
+        //Noise is the noise that the animal makes.
+        //Weight is the weight of the animal in pounds.
         public Animal(string name, int age, string noise, double weight)
         {
             Name = name;
@@ -124,7 +132,7 @@ namespace HW_1
             Noise = noise;
             Weight = weight;
         }
-
+        //Prints all information about the animal
         public virtual void PrintInfo()
         {
             Console.WriteLine($"Name: {Name}");
@@ -133,12 +141,12 @@ namespace HW_1
             Console.WriteLine($"Weight: {Weight}");
             Console.WriteLine("");
         }
-
+        //Animal make the noise assigned to it.
         public virtual void MakeNoise()
         {
             Console.WriteLine($"{Noise}");
         }
-
+        //Animals age goes up by 1.
         public virtual int AgeUp()
         {
             Console.Write($"{Name} aged up: ");
@@ -151,22 +159,24 @@ namespace HW_1
     public class Cat : Animal
     {
 
-
+        //Constructor for a cat. Inherits method from the Animal class.
         public Cat(string name, int age, string noise, double weight) : base(name, age, noise, weight)
         {
 
         }
+        //Prints Info about the cat. Inherits method from the Animal class.
         public override void PrintInfo()
         {
             Console.WriteLine("I am a cat.");
             base.PrintInfo();
         }
-
+        
+        //Makes a meow noise.
         public override void MakeNoise()
         {
             Console.WriteLine("Meow");
         }
-
+        //Ages up the cat. Inherits method from the Animal class.
         public override int AgeUp()
         {
             return base.AgeUp();
@@ -175,21 +185,23 @@ namespace HW_1
 
     public class Cassowary : Animal
     {
+        //Constructor for a Cassowary. Inherits method from the Animal class.
         public Cassowary(string name, int age, string noise, double weight) : base(name, age, noise, weight)
         {
 
         }
+        //Prints all information about the Cassowary. Inherits method from the Animal class.
         public override void PrintInfo()
         {
             Console.WriteLine("I am a Cassowary.");
             base.PrintInfo();
         }
-
+        //Makes a cassowary noise. Inherits method from the Animal class.
         public override void MakeNoise()
         {
             base.MakeNoise();
         }
-
+        //Ages up Cassowary. Inherits method from the Animal class.
         public override int AgeUp()
         {
             return base.AgeUp();
@@ -198,20 +210,23 @@ namespace HW_1
 
     public class Dolphin : Animal
     {
+        //Constructor for Dolphin. Inherits method from the Animal class.
         public Dolphin(string name, int age, string noise, double weight) : base(name, age, noise, weight)
         {
 
         }
+        //Prints all information about the dolphin. Inherits method from the Animal class.
         public override void PrintInfo()
         {
             Console.WriteLine("I am a Dolphin.");
             base.PrintInfo();
         }
+        //Makes a Dolphin noise.
         public override void MakeNoise()
         {
-            base.MakeNoise();
+            Console.WriteLine("Blub Blub");
         }
-
+        //Ages up the dolphin. Inherits method from the Animal class.
         public override int AgeUp()
         {
             return base.AgeUp();
